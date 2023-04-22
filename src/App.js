@@ -1,11 +1,16 @@
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Header/SharedLayout/Layout/Layout';
+import TweetPage from './pages/TweetPage/TweetPage';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<TweetPage /> } />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
