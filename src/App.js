@@ -1,9 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Header/SharedLayout/Layout/Layout';
+import Layout from './components/Layout/Layout';
 import TweetPage from './pages/TweetPage/TweetPage';
 import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch()
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
