@@ -1,15 +1,23 @@
+import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { LoadingPage } from "../LoadingPage/LoadingPage";
+import { Wrapper, Header } from "./Layout.styled";
 
 
 const Layout = () => {
     return (
       <>
-            <header>
-             <NavLink to='/'>Home Page</NavLink>
-            </header>
-            <main>
-                <Outlet/>
-            </main>
+        <Wrapper>
+          <Header>
+            <NavLink to="/">Home Page</NavLink>
+            <NavLink to="/users">Users</NavLink>
+          </Header>
+          <main>
+            <Suspense fallback={<LoadingPage />}>
+              <Outlet />
+            </Suspense>
+          </main>
+        </Wrapper>
       </>
     );
 };

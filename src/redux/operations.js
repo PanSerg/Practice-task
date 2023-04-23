@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'https://643318b1d0127730d2e13330.mockapi.io';
 
 export const addTweet = createAsyncThunk(
     'users/addContact',
