@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { PageStyled, PageMain } from "./TweetPage.styled";
+import { fetchUsers } from "../../redux/operations";
+
+const users = [fetchUsers()];
 
 const TweetPage = () => {
     const location = useLocation();
@@ -11,8 +14,14 @@ const TweetPage = () => {
             <div to={backLinkHref}>Back</div>
             <span>filter</span>
           </PageMain>
+          <ul>
+            {users.map(user => (
+              <li key={user.id}>
+                <div user={user}></div>
+              </li>
+            ))}
+          </ul>
         </PageStyled>
-        <h3>Users</h3>
       </main>
     );
 };

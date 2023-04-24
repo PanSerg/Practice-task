@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { LoadingPage } from "../LoadingPage/LoadingPage";
-import { Wrapper, Header } from "./Layout.styled";
+import { Wrapper, Header, NavContainer, NavLinkCard } from "./Layout.styled";
 
 
 const Layout = () => {
@@ -9,8 +9,10 @@ const Layout = () => {
       <>
         <Wrapper>
           <Header>
-            <NavLink to="/">Home Page</NavLink>
-            <NavLink to="/users">Users</NavLink>
+            <NavContainer>
+              <NavLinkCard to="/" end>Home Page</NavLinkCard>
+              <NavLinkCard to="/users">Users</NavLinkCard>
+            </NavContainer>
           </Header>
           <main>
             <Suspense fallback={<LoadingPage />}>
