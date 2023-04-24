@@ -1,25 +1,45 @@
-import { Container, Divider, ImageQuestion, Logo, CircleAvatar, BgAvatar } from './CardUser.styled';
+import {
+  Container,
+  Divider,
+  ImageQuestion,
+  Logo,
+  CircleAvatar,
+  BgAvatar,
+  TweetData,
+  FollowBtn,
+} from './CardUser.styled';
+import { useState } from 'react';
 
 import ImageQu from '../Images/picture.png';
 import logo from '../Images/Logo.png';
 
-export const CardUser = ({ user }) => {
-  const { user: userName, followers, tweets, avatar } = user;
+export const CardUser = ({ user, handleFollowingBtn }) => {
+    const { user: userName, followers, tweets, avatar } = user;
+    const [activeBtn, onActiveBtn] = useState();
+
+  const handleActiveBtn = () => {
+    onActiveBtn(!activeBtn);
+    handleFollowingBtn(user);
+  };
   return (
     <Container>
-      <div>
-        <ImageQuestion src={ImageQu} alt="picture" />
-        <Logo src={logo} alt="logo GoIT" />
-        <Divider />
-        <CircleAvatar>
-          <BgAvatar>
-            <img width="62px" height="62px" src={avatar} alt={userName} />
-          </BgAvatar>
-        </CircleAvatar>
-      </div>
-      <ul>{tweets}</ul>
-      <ul>{followers}</ul>
-      <button type="button">follow</button>
+      <ImageQuestion src={ImageQu} alt="picture" />
+      <Logo src={logo} alt="logo GoIT" />
+      <Divider />
+      <CircleAvatar>
+        <BgAvatar>
+          <img width="62px" height="62px" src={avatar} alt={userName} />
+        </BgAvatar>
+      </CircleAvatar>
+      <TweetData>{tweets.toLocaleString('en-US')} tweets</TweetData>
+      <TweetData>{followers.toLocaleString('en-US')} followers</TweetData>
+
+          <FollowBtn type="button"
+            $mode={activeBtn ? 'active' : ''}
+              onClick={handleActiveBtn}
+          >
+              {activeBtn ? 'following' : 'follow'}
+          </FollowBtn>
     </Container>
   );
 };
