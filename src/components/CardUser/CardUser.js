@@ -12,9 +12,10 @@ import { useState } from 'react';
 
 import ImageQu from '../Images/picture.png';
 import logo from '../Images/Logo.png';
+import avatar from '../Images/Hansel.png';
 
 export const CardUser = ({ user, handleFollowingBtn }) => {
-  const { user: userName, followers, tweets, avatar } = user;
+  const { user: userName, followers, tweets } = user;
   const [activeBtn, onActiveBtn] = useState();
 
   const handleActiveBtn = () => {

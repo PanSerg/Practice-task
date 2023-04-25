@@ -5,21 +5,22 @@ import { CardUser } from "../../components/CardUser/CardUser";
 import { fetchUsers, updateUser } from "../../service/serviceAPI";
 
 const TweetPage = () => {
-  const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
-  
   const [page, setPage] = useState(1);
   const [users, setUsers] = useState([]);
   const [followingUsers, setFollowingUsers] = useState();
-  const [filter, setFilter] = useState(true);
   const [isLoadMoreBtn, setIsLoadMoreBtn] = useState(true);
+  // const [filter, setFilter] = useState(true);
+
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     async function getUsers() {
       try {
         const userList = await fetchUsers(page);
         userList.length > 0
-          ? setUsers(prev => [...prev, ...userList]) : setIsLoadMoreBtn(false);
+          ? setUsers(prev => [...prev, ...userList])
+          : setIsLoadMoreBtn(false);
       } catch (error) {
         console.log('error :>>', error);
         }
@@ -51,22 +52,20 @@ const TweetPage = () => {
 
   const handleLoadMore = () => setPage(prev => prev + 1);
 
-  // const filterChoice = e => setFilter(e.target.value);
 
-  const filterUser = () => {
-    const searchId = followingUsers.map(({ id }) => id);
-    switch (filter) {
-      case 'follow':
-        return users.filter(({ id }) => !searchId.includes(id));
-      case 'followings':
-        return users.filter(({ id }) => searchId.includes(id));
-      default:
-        return users;
-    }
-  };
+  // const filterUser = (e) => {
+  //   const searchId = followingUsers.map(({ id }) => id);
+  //   switch (filter) {
+  //     case 'follow':
+  //       return users.filter(({ id }) => !searchId.includes(id));
+  //     case 'followings':
+  //       return users.filter(({ id }) => searchId.includes(id));
+  //     default:
+  //       return users;
+  //   }
+  // };
 
     return (
-      <main>
         <PageStyled>
           <PageMain>
             <div to={backLinkHref}>Back</div>
@@ -75,7 +74,7 @@ const TweetPage = () => {
             </span>
           </PageMain>
           <ul>
-            {filterUser().map(user => (
+            {users.map(user => (
               <li key={user.id}>
                 <CardUser
                   user={user}
@@ -91,7 +90,6 @@ const TweetPage = () => {
             </button>
           )}
         </PageStyled>
-      </main>
     );
 };
 

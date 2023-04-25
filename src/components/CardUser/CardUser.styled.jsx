@@ -51,12 +51,21 @@ export const BgAvatar = styled.div`
 `;
 
 export const TweetData = styled.p`
-    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 52px;
+    margin-bottom: 26px;
+
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    margin-bottom: 16px;
+    line-height: 24px;
     text-transform: uppercase;
+
     color: #EBD8FF;
 `;
 
