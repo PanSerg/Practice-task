@@ -14,8 +14,8 @@ import ImageQu from '../Images/picture.png';
 import logo from '../Images/Logo.png';
 
 export const CardUser = ({ user, handleFollowingBtn }) => {
-    const { user: userName, followers, tweets, avatar } = user;
-    const [activeBtn, onActiveBtn] = useState();
+  const { user: userName, followers, tweets, avatar } = user;
+  const [activeBtn, onActiveBtn] = useState();
 
   const handleActiveBtn = () => {
     onActiveBtn(!activeBtn);
