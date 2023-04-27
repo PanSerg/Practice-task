@@ -1,5 +1,5 @@
 import {
-  Container,
+  Card,
   Divider,
   ImageQuestion,
   Logo,
@@ -23,7 +23,9 @@ export const CardUser = ({ user, handleFollowingBtn }) => {
     handleFollowingBtn(user);
   };
   return (
-    <Container>
+    
+    <Card>
+
       <ImageQuestion src={ImageQu} alt="picture" />
       <Logo src={logo} alt="logo GoIT" />
       <Divider />
@@ -41,6 +43,6 @@ export const CardUser = ({ user, handleFollowingBtn }) => {
           >
               {activeBtn ? 'following' : 'follow'}
           </FollowBtn>
-    </Container>
+    </Card>
   );
 };
