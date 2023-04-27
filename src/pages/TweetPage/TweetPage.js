@@ -9,7 +9,7 @@ const TweetPage = () => {
   const [users, setUsers] = useState([]);
   const [followingUsers, setFollowingUsers] = useState();
   const [isLoadMoreBtn, setIsLoadMoreBtn] = useState(true);
-  // const [filter, setFilter] = useState(true);
+  const [filter, setFilter] = useState(true);
 
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
