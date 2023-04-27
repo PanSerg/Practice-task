@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Practice-task/static/css/main.073c9b0a.css",
+    "main.js": "/Practice-task/static/js/main.8cc344fe.js",
+    "static/js/75.39cdb78d.chunk.js": "/Practice-task/static/js/75.39cdb78d.chunk.js",
+    "static/js/248.aa8e80ef.chunk.js": "/Practice-task/static/js/248.aa8e80ef.chunk.js",
+    "static/js/254.060bbbf8.chunk.js": "/Practice-task/static/js/254.060bbbf8.chunk.js",
+    "static/media/picture.png": "/Practice-task/static/media/picture.032662a2a907475127d7.png",
+    "index.html": "/Practice-task/index.html",
+    "main.073c9b0a.css.map": "/Practice-task/static/css/main.073c9b0a.css.map",
+    "main.8cc344fe.js.map": "/Practice-task/static/js/main.8cc344fe.js.map",
+    "75.39cdb78d.chunk.js.map": "/Practice-task/static/js/75.39cdb78d.chunk.js.map",
+    "248.aa8e80ef.chunk.js.map": "/Practice-task/static/js/248.aa8e80ef.chunk.js.map",
+    "254.060bbbf8.chunk.js.map": "/Practice-task/static/js/254.060bbbf8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8cc344fe.js"
+  ]
+}
