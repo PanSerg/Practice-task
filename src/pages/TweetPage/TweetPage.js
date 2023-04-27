@@ -64,7 +64,7 @@ const TweetPage = () => {
   //       return users;
   //   }
   // };
-
+  console.log(users);
     return (
         <PageStyled>
           <PageMain>
@@ -80,7 +80,7 @@ const TweetPage = () => {
                   user={user}
                   followingUsers={followingUsers}
                   handleFollowingBtn={handleFollowingBtn}
-                ></CardUser>
+                />
               </li>
             ))}
           </ul>
