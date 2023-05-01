@@ -6,8 +6,8 @@ import {
   CircleAvatar,
   BgAvatar,
   TweetData,
-  FollowBtn,
 } from './CardUser.styled';
+import { FollowBtn } from '../Button/Button.styled';
 import { useState } from 'react';
 
 import ImageQu from '../Images/picture.png';

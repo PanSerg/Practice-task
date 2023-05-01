@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { PageStyled, PageMain } from "./TweetPage.styled";
 import { CardUser } from "../../components/CardUser/CardUser";
 import { fetchUsers, updateUser } from "../../service/serviceAPI";
+import { Button } from "../../components/Button/Button.styled";
 
 const TweetPage = () => {
   const [page, setPage] = useState(1);
@@ -66,30 +67,28 @@ const TweetPage = () => {
   // };
   console.log(users);
     return (
-        <PageStyled>
-          <PageMain>
-            <div to={backLinkHref}>Back</div>
-            <span>
-              Filter
-            </span>
-          </PageMain>
-          <ul>
-            {users.map(user => (
-              <li key={user.id}>
-                <CardUser
-                  user={user}
-                  followingUsers={followingUsers}
-                  handleFollowingBtn={handleFollowingBtn}
-                />
-              </li>
-            ))}
-          </ul>
-          {isLoadMoreBtn && (
-            <button type="button" onClick={handleLoadMore}>
-              Load more
-            </button>
-          )}
-        </PageStyled>
+      <PageStyled>
+        <PageMain>
+          <div to={backLinkHref}>Back</div>
+          <span>Filter</span>
+        </PageMain>
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>
+              <CardUser
+                user={user}
+                followingUsers={followingUsers}
+                handleFollowingBtn={handleFollowingBtn}
+              />
+            </li>
+          ))}
+        </ul>
+        {isLoadMoreBtn && (
+          <Button type="button" onClick={handleLoadMore}>
+            Load more
+          </Button>
+        )}
+      </PageStyled>
     );
 };
 

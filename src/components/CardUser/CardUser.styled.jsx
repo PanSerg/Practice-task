@@ -56,8 +56,8 @@ export const TweetData = styled.p`
     flex-direction: column;
     align-items: center;
 
-    margin-top: 52px;
-    margin-bottom: 26px;
+    margin-top: 50px;
+    margin-bottom: 16px;
 
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -67,29 +67,4 @@ export const TweetData = styled.p`
     text-transform: uppercase;
 
     color: #EBD8FF;
-`;
-
-export const FollowBtn = styled.button`
-    position: absolute;
-    width: 196px;
-    height: 50px;
-    left: 92px;
-    top: 374px;
-    margin-top: 10px;
-
-    background: #EBD8FF;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-    border-radius: 10.3108px;
-
-    font-family: 'Montserrat'; 
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    text-transform: uppercase;
-    color: #373737;
-
-    &:hover,
-    &.active {
-    background: #5CD3A8;
-  }
 `;
